@@ -33,14 +33,10 @@ class DashboardModule(Module):
         """
         Groups
         """
-        putCommandOnDashboard("Drivetrain", ResetGyro(hardware.drivetrain))
-        putCommandOnDashboard("Drivetrain", DriveRelative.left(hardware.drivetrain))
-        putCommandOnDashboard("Drivetrain", DriveRelative.right(hardware.drivetrain))
-        putCommandOnDashboard("Drivetrain", DriveRelative.forwards(hardware.drivetrain))
-        putCommandOnDashboard(
-            "Drivetrain", DriveRelative.backwards(hardware.drivetrain)
-        )
-        putCommandOnDashboard("Drivetrain", AlignWithReefSide(hardware.drivetrain))
+        #putCommandOnDashboard("Drivetrain", DriveRelative.forwards(hardware.drivetrain))
+        #putCommandOnDashboard(
+        #    "Drivetrain", DriveRelative.backwards(hardware.drivetrain)
+        #)
 
         #putCommandOnDashboard(
         #    "Group",
@@ -59,7 +55,6 @@ class DashboardModule(Module):
         for subsystem in self._hardware.subsystems:
             wpilib.SmartDashboard.putData(subsystem.getName(), subsystem)
 
-        wpilib.SmartDashboard.putData("Gyro", self._hardware.drivetrain._gyro)
         wpilib.SmartDashboard.putData(
             "CommandScheduler", CommandScheduler.getInstance()
         )

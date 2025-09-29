@@ -3,10 +3,8 @@ from functools import wraps
 
 from wpiutil import Sendable
 
-from ultime.alert import AlertCreator
 
-
-class Module(AlertCreator, Sendable):
+class Module(Sendable):
     def __init__(self):
         super().__init__()
         self.redefines_init_sendable = False

@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 import wpilib
 
-from ultime.modulerobot import ModuleRobot
 from modules.control import ControlModule
 from modules.dashboard import DashboardModule
 from modules.hardware import HardwareModule
 from modules.propertysavechecker import PropertySaveCheckerModule
+from ultime.modulerobot import ModuleRobot
 
 
 class Robot(ModuleRobot):
@@ -30,8 +30,6 @@ class Robot(ModuleRobot):
         self.addModules(
             self.control,
             self.dashboard,
-            self.diagnostics,
-            self.logging,
             self.property_save_checker,
             # self.battery_sim,  # Current becomes so low, robot stops working
         )

@@ -4,11 +4,11 @@ from typing import Type
 
 import wpilib
 from commands2 import Command, CommandScheduler, PrintCommand
+from ultime.timethis import tt
 from wpilib import Timer, DataLogManager
 from wpiutil import SendableBuilder
 
 from ultime.autoproperty import FloatProperty, asCallable
-from ultime.timethis import tt
 
 
 def ignore_requirements(reqs: list[str]):

@@ -3,11 +3,8 @@ from abc import abstractmethod
 import commands2
 from wpiutil import SendableBuilder
 
-from ultime.alert import AlertCreator
-from ultime.timethis import tt
 
-
-class Subsystem(AlertCreator, commands2.Subsystem):
+class Subsystem(commands2.Subsystem):
     @abstractmethod
     def getCurrentDrawAmps(self) -> float:
         raise NotImplementedError(
