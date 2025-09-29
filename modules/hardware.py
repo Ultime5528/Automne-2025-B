@@ -28,27 +28,5 @@ class HardwareModule(Module):
         self.elevator = Elevator()
         self.elevator.setDefaultCommand(MaintainElevator(self.elevator))
 
-        self.intake = Intake()
-
-        self.claw = Claw()
-
-        self.arm = Arm()
-
-        self.printer = Printer()
-
-        self.climber = Climber()
-
-        self.led = LEDController(self)
-
-        self.pdp = PowerDistribution()
-
         self.subsystems: list[Subsystem] = [
-            self.drivetrain,
-            self.elevator,
-            self.intake,
-            self.claw,
-            self.arm,
-            self.printer,
-            self.climber,
-            self.led,
-        ]
+            self.drivetrain]
