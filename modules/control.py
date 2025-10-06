@@ -1,5 +1,4 @@
 from modules.hardware import HardwareModule
-from ultime.axistrigger import AxisTrigger
 from ultime.module import Module
 
 
