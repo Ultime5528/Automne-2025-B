@@ -15,8 +15,11 @@ class Drivetrain(Subsystem):
 
         self._motor = VictorSP(ports.SIM.drivetrain_motor)
 
-    def startMotors(self):
+    def goForward(self):
         self._motor.set(self.motor_speed)
+
+    def goBackward(self):
+        self._motor.set(-self.motor_speed)
 
     def StopMotors(self):
         self._motor.stopMotor()

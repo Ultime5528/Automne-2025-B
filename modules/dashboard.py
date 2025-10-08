@@ -20,18 +20,18 @@ class DashboardModule(Module):
 
     def setupCommands(self, hardware):
         """
-        Elevator
+        Flywheel
         """
         
         #putCommandOnDashboard("Elevator", ResetElevator(hardware.elevator))
 
         """
-        Printer
+        Pulley
         """
         #putCommandOnDashboard("Printer", ResetPrinterRight(hardware.printer))
 
         """
-        Groups
+        Drivetrain
         """
         #putCommandOnDashboard("Drivetrain", DriveRelative.forwards(hardware.drivetrain))
         #putCommandOnDashboard(

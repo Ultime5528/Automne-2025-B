@@ -1,6 +1,7 @@
 import commands2
 from wpilib import PowerDistribution
 
+from subsystems.drivetrain import Drivetrain
 from ultime.module import Module
 from ultime.subsystem import Subsystem
 
@@ -12,7 +13,7 @@ class HardwareModule(Module):
         self.panel_1 = commands2.button.CommandJoystick(1)
         self.panel_2 = commands2.button.CommandJoystick(2)
 
-        #self.drivetrain = Drivetrain()
+        self.drivetrain = Drivetrain()
         #self.drivetrain.setDefaultCommand(DriveField(self.drivetrain, self.controller))
 
         self.pdp = PowerDistribution()
