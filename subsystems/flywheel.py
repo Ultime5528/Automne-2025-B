@@ -1,6 +1,5 @@
 
 from wpilib import VictorSP
-
 import ports
 from ultime.autoproperty import autoproperty
 from ultime.subsystem import Subsystem
@@ -10,7 +9,7 @@ class Flywheel(Subsystem):
 
     FWspeed = autoproperty(0.2)
 
-    def  __init__(self):
+    def __init__(self):
 
         super().__init__()
 

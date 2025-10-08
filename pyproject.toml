@@ -13,7 +13,7 @@ robotpy_version = "2025.3.2.2"
 robotpy_extras = [
     # "all",
     # "apriltag",
-    # "commands2",
+     "commands2",
     # "cscore",
     # "navx",
     # "pathplannerlib",
@@ -21,7 +21,7 @@ robotpy_extras = [
     # "phoenix6",
     # "rev",
     # "romi",
-    # "sim",
+     "sim",
     # "xrp",
 ]
 
