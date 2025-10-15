@@ -27,7 +27,8 @@
   "NTProvider": {
     "types": {
       "/FMSInfo": "FMSInfo",
-      "/SmartDashboard/CommandScheduler": "Scheduler"
+      "/SmartDashboard/CommandScheduler": "Scheduler",
+      "/SmartDashboard/Drivetrain commands/Drive": "Command"
     }
   },
   "NetworkTables Info": {

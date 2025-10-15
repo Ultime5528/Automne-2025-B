@@ -2,6 +2,7 @@ import commands2
 import wpilib
 from commands2 import CommandScheduler
 
+from commands.drive import Drive
 from modules.hardware import HardwareModule
 from ultime.module import Module, ModuleList
 
@@ -33,10 +34,7 @@ class DashboardModule(Module):
         """
         Drivetrain
         """
-        #putCommandOnDashboard("Drivetrain", DriveRelative.forwards(hardware.drivetrain))
-        #putCommandOnDashboard(
-        #    "Drivetrain", DriveRelative.backwards(hardware.drivetrain)
-        #)
+        putCommandOnDashboard("Drivetrain", Drive(hardware.drivetrain, hardware.controller))
 
         #putCommandOnDashboard(
         #    "Group",
