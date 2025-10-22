@@ -21,5 +21,5 @@ class Drive(Command):
             self.drivetrain.goBackward()
 
     def end(self, interrupted: bool) -> None:
-        self.drivetrain.stop()
+        self.drivetrain.StopMotors()
 
