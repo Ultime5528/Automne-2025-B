@@ -1,16 +1,16 @@
-def initialize(self) -> None:
-    self.timer.reset()
-    self.timer.start()
 
+from subsystems.pulley import Pulley
+from idlelib.undo import Command
 
-def execute(self) -> None:
-    self.ballPusher.open()
+class PulleyStartMotor(Command):
 
+    def __init__(self, pulley: Pulley):
+        super().__init__()
 
-def isFinished(self) -> bool:
-    return self.timer.get() >= self.open_time
+        self.pulley = pulley
+        self.addRequirements(pulley)
 
+    def initialize(self) -> None:
+        self.pulley.startMotors()
 
-def end(self, interrupted: bool) -> None:
-    self.timer.stop()
-    self.ballPusher.close()
+    def isFinished(self) -> bool:
