@@ -11,13 +11,15 @@ class Pulley(Subsystem):
 
     def __init__(self):
 
-        super().__init__(self)
+        super().__init__()
 
-        self.motor = VictorSP(ports.SIM.pulley_motor)
+        self._motor = VictorSP(ports.SIM.pulley_motor)
 
-    def startPulley(self):
+    def pulleyUp(self):
         self._motor.setspeed(self.PulleySpeed)
 
+    def pulleyDown(self):
+        self._motor.setspeed(-self.PulleySpeed)
 
 
     def stopPulley(self):
