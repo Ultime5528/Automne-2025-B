@@ -2,7 +2,8 @@ import commands2
 import wpilib
 from commands2 import CommandScheduler
 
-from modules.hardware import HardwareModule
+from commands.drive import Drive
+from subsystems import HardwareModule
 from ultime.module import Module, ModuleList
 
 
@@ -20,23 +21,20 @@ class DashboardModule(Module):
 
     def setupCommands(self, hardware):
         """
-        Elevator
+        Flywheel
         """
         
         #putCommandOnDashboard("Elevator", ResetElevator(hardware.elevator))
 
         """
-        Printer
+        Pulley
         """
         #putCommandOnDashboard("Printer", ResetPrinterRight(hardware.printer))
 
         """
-        Groups
+        Drivetrain
         """
-        #putCommandOnDashboard("Drivetrain", DriveRelative.forwards(hardware.drivetrain))
-        #putCommandOnDashboard(
-        #    "Drivetrain", DriveRelative.backwards(hardware.drivetrain)
-        #)
+        putCommandOnDashboard("Drivetrain", Drive(hardware.drivetrain, hardware.controller))
 
         #putCommandOnDashboard(
         #    "Group",
