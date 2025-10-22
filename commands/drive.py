@@ -1,14 +1,14 @@
 
 import commands2
-from ultime.command import Command
 
 from subsystems.drivetrain import Drivetrain
+from ultime.command import Command
 
 
 class Drive(Command):
 
     def __init__(self, drivetrain : Drivetrain,
-                 xbox_remote: commands2.button.CommandXboxController,) -> None:
+                 xbox_remote: commands2.button.CommandXboxController) -> None:
         super().__init__()
         self.drivetrain = drivetrain
         self.addRequirements(drivetrain)

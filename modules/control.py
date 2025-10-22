@@ -1,4 +1,4 @@
-from modules.hardware import HardwareModule
+from subsystems import HardwareModule
 from ultime.module import Module
 
 

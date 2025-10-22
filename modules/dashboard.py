@@ -3,7 +3,7 @@ import wpilib
 from commands2 import CommandScheduler
 
 from commands.drive import Drive
-from modules.hardware import HardwareModule
+from subsystems import HardwareModule
 from ultime.module import Module, ModuleList
 
 

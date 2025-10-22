@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 import wpilib
 
-from modules.control import ControlModule
-from modules.dashboard import DashboardModule
-from modules.hardware import HardwareModule
-from modules.propertysavechecker import PropertySaveCheckerModule
+from subsystems import ControlModule
+from subsystems import DashboardModule
+from subsystems import HardwareModule
+from subsystems import PropertySaveCheckerModule
 from ultime.modulerobot import ModuleRobot
 
 

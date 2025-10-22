@@ -2,7 +2,6 @@ import commands2
 from wpilib import PowerDistribution
 
 from commands.drive import Drive
-from subsystems import drivetrain
 from subsystems.drivetrain import Drivetrain
 from ultime.module import Module
 from ultime.subsystem import Subsystem
