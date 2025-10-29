@@ -1,4 +1,5 @@
 from wpilib import VictorSP
+from wpiutil import SendableBuilder
 
 import ports
 from ultime.autoproperty import autoproperty
@@ -21,5 +22,9 @@ class Drivetrain(Subsystem):
     def goBackward(self):
         self._motor.set(-self.motor_speed)
 
-    def StopMotors(self):
+    def stop(self):
         self._motor.stopMotor()
+
+    def initSendable(self, builder: SendableBuilder) -> None:
+        def noop(_): pass
+        builder.addFloatProperty("drive_motor", self._motor.get, noop)
