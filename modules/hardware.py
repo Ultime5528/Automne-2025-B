@@ -1,6 +1,7 @@
 import commands2
 from wpilib import PowerDistribution
 
+from commands.movegroove import MoveGroove
 from subsystems.pulley import Pulley
 from commands.drive import Drive
 from subsystems.drivetrain import Drivetrain
@@ -17,10 +18,9 @@ class HardwareModule(Module):
 
         self.drivetrain = Drivetrain()
         self.drivetrain.setDefaultCommand(Drive(self.drivetrain, self.controller))
-
         self.pulley = Pulley()
-
+        self.pulley.setDefaultCommand(MoveGroove(self.pulley, self.controller))
 
         self.pdp = PowerDistribution()
 
-        self.subsystems: list[Subsystem] = [self.drivetrain]
+        self.subsystems: list[Subsystem] = [self.drivetrain, self.pulley]

@@ -22,6 +22,5 @@ class Drive(Command):
         else:
             self.drivetrain.stop()
 
-    def end(self, interrupted: bool) -> None:
-        self.drivetrain.StopMotors()
-
+    def isFinished(self) -> bool:
+        return False
