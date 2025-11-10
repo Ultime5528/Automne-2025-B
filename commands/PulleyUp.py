@@ -22,6 +22,7 @@ class MoveGrooveMotor(Command):
 
 
     def isFinished(self) -> bool:
+        pass
 
 
     def end(self, interrupted: bool) -> None:

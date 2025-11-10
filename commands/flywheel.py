@@ -14,3 +14,4 @@ class FlywheelStartMotor(Command):
         self.flywheel.startMotors()
 
     def isFinished(self) -> bool:
+        pass
