@@ -2,6 +2,8 @@ import commands2
 from wpilib import PowerDistribution
 
 from subsystems.pulley import Pulley
+from commands.drive import Drive
+from subsystems.drivetrain import Drivetrain
 from ultime.module import Module
 from ultime.subsystem import Subsystem
 
@@ -14,11 +16,11 @@ class HardwareModule(Module):
         self.panel_2 = commands2.button.CommandJoystick(2)
 
         self.drivetrain = Drivetrain()
-        self.drivetrain.setDefaultCommand(DriveField(self.drivetrain, self.controller))
+        self.drivetrain.setDefaultCommand(Drive(self.drivetrain, self.controller))
 
         self.pulley = Pulley()
 
 
         self.pdp = PowerDistribution()
 
-        self.subsystems: list[Subsystem] = []
+        self.subsystems: list[Subsystem] = [self.drivetrain]

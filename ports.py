@@ -26,3 +26,4 @@ class PDP(Immutable):
 
 class SIM(Immutable):
     flywheel_motor = 1
+    drivetrain_motor = 2
