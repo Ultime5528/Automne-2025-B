@@ -19,6 +19,8 @@ class Drive(Command):
             self.drivetrain.goForward()
         elif self.xbox_remote.povDown():
             self.drivetrain.goBackward()
+        else:
+            self.drivetrain.stop()
 
     def end(self, interrupted: bool) -> None:
         self.drivetrain.StopMotors()
