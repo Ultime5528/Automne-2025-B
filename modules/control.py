@@ -1,3 +1,4 @@
+from commands.shoot import Shoot
 from modules.hardware import HardwareModule
 from ultime.module import Module
 
@@ -12,6 +13,5 @@ class ControlModule(Module):
         """
         Pilot's buttons
         """
-        #hardware.controller.rightTrigger().whileTrue(
-        #    AlignWithAlgae(hardware.drivetrain, algae_vision, hardware.controller)
-        #)
+        hardware.controller.y().whileTrue(
+            Shoot(hardware.flywheel))

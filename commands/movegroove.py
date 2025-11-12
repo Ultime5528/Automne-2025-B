@@ -1,7 +1,7 @@
 import commands2
+from commands2 import Command
 
 from subsystems.pulley import Pulley
-from idlelib.undo import Command
 
 class MoveGroove(Command):
 

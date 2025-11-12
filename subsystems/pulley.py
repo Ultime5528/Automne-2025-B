@@ -1,4 +1,5 @@
 from wpilib import VictorSP
+from wpiutil import SendableBuilder
 
 import ports
 from ultime.autoproperty import autoproperty
@@ -21,6 +22,9 @@ class Pulley(Subsystem):
     def pulleyDown(self):
         self._motor.setspeed(-self.PulleySpeed)
 
-
-    def stopPulley(self):
+    def stop(self):
         self._motor.stopMotor()
+
+    def initSendable(self, builder: SendableBuilder) -> None:
+        def noop(_): pass
+        builder.addFloatProperty("pulley_motor", self._motor.get, noop)
