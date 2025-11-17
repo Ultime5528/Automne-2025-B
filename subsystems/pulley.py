@@ -17,10 +17,10 @@ class Pulley(Subsystem):
         self._motor = VictorSP(ports.SIM.pulley_motor)
 
     def pulleyUp(self):
-        self._motor.setspeed(self.PulleySpeed)
+        self._motor.set(self.PulleySpeed)
 
     def pulleyDown(self):
-        self._motor.setspeed(-self.PulleySpeed)
+        self._motor.set(-self.PulleySpeed)
 
     def stop(self):
         self._motor.stopMotor()

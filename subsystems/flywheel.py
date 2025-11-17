@@ -16,7 +16,7 @@ class Flywheel(Subsystem):
 
         self._motor = VictorSP(ports.SIM.flywheel_motor)
 
-    def startMotor(self):
+    def start(self):
         self._motor.set(self.motor_speed)
 
     def stop(self):

@@ -1,4 +1,3 @@
-import commands2
 from commands2 import Command
 
 from subsystems.flywheel import Flywheel
@@ -12,7 +11,7 @@ class Shoot(Command):
         self.addRequirements(flywheel)
 
     def execute(self) -> None:
-        self.flywheel.startMotor()
+        self.flywheel.start()
 
     def end(self, interrupted: bool):
         self.flywheel.stop()

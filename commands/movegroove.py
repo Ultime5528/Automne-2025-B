@@ -3,6 +3,7 @@ from commands2 import Command
 
 from subsystems.pulley import Pulley
 
+
 class MoveGroove(Command):
 
     def __init__(self, pulley: Pulley,
@@ -13,9 +14,9 @@ class MoveGroove(Command):
         self.xbox_remote = xbox_remote
 
     def execute(self):
-        if self.xbox_remote.rightTrigger():
+        if self.xbox_remote.y():
             self.pulley.pulleyUp()
-        elif self.xbox_remote.leftTrigger():
+        elif self.xbox_remote.a():
             self.pulley.pulleyDown()
         else:
             self.pulley.stop()
