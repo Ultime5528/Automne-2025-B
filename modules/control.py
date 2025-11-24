@@ -1,4 +1,4 @@
-from commands.pushball import PushBall
+from commands.pushballandretract import PushBallAndRetract
 from commands.shoot import Shoot
 from modules.hardware import HardwareModule
 from ultime.module import Module
@@ -16,4 +16,4 @@ class ControlModule(Module):
         """
         hardware.controller.rightTrigger().whileTrue(
             Shoot(hardware.flywheel))
-        hardware.controller.rightBumper(PushBall(hardware.ballpusher))
+        hardware.controller.rightBumper(PushBallAndRetract(hardware.ballpusher))

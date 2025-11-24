@@ -5,7 +5,7 @@ from subsystems.ballpusher import BallPusher
 from ultime.autoproperty import autoproperty
 
 
-class RetractBall(Command):
+class RetractBallPusher(Command):
     delay = autoproperty(1.5)
 
     def __init__(self, ballpusher: BallPusher) -> None:

@@ -4,8 +4,9 @@ from commands2 import CommandScheduler
 
 from commands.drive import Drive
 from commands.movegroove import MoveGroove
-from commands.pushandretractball import PushAndRetractBall
+from commands.pushballandretract import PushBallAndRetract
 from commands.pushball import PushBall
+from commands.retractballpusher import RetractBallPusher
 from commands.shoot import Shoot
 from modules.hardware import HardwareModule
 from ultime.module import Module, ModuleList
@@ -38,8 +39,9 @@ class DashboardModule(Module):
         """
         BallPusher
         """
-
-        putCommandOnDashboard("BallPusher", PushAndRetractBall(hardware.ballpusher))
+        putCommandOnDashboard("BallPusher", RetractBallPusher(hardware.ballpusher))
+        putCommandOnDashboard("BallPusher", PushBall(hardware.ballpusher))
+        putCommandOnDashboard("BallPusher", PushBallAndRetract(hardware.ballpusher))
 
         """
         Drivetrain
