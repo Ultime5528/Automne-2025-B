@@ -3,6 +3,11 @@ import wpilib
 from commands2 import CommandScheduler
 
 from commands.drive import Drive
+from commands.movegroove import MoveGroove
+from commands.pushballandretract import PushBallAndRetract
+from commands.pushball import PushBall
+from commands.retractballpusher import RetractBallPusher
+from commands.shoot import Shoot
 from modules.hardware import HardwareModule
 from ultime.module import Module, ModuleList
 
@@ -24,12 +29,19 @@ class DashboardModule(Module):
         Flywheel
         """
         
-        #putCommandOnDashboard("Elevator", ResetElevator(hardware.elevator))
+        putCommandOnDashboard("Flywheel", Shoot(hardware.flywheel))
 
         """
         Pulley
         """
-        #putCommandOnDashboard("Printer", ResetPrinterRight(hardware.printer))
+        putCommandOnDashboard("Pulley", MoveGroove(hardware.pulley, hardware.controller))
+
+        """
+        BallPusher
+        """
+        putCommandOnDashboard("BallPusher", RetractBallPusher(hardware.ballpusher))
+        putCommandOnDashboard("BallPusher", PushBall(hardware.ballpusher))
+        putCommandOnDashboard("BallPusher", PushBallAndRetract(hardware.ballpusher))
 
         """
         Drivetrain

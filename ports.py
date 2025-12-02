@@ -25,5 +25,7 @@ class PDP(Immutable):
     pass
 
 class SIM(Immutable):
-    flywheel_motor = 1
-    drivetrain_motor = 2
+    flywheel_motor = 0
+    pulley_motor = 1
+    ballpusher_motor = 2
+    drivetrain_motor = 3

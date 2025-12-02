@@ -163,3 +163,6 @@ networktables.json.bck
 
 .deploy_cfg
 logs/
+*.pyc
+
+*.json
