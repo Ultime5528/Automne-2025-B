@@ -16,4 +16,5 @@ class ControlModule(Module):
         """
         hardware.controller.rightTrigger().whileTrue(
             Shoot(hardware.flywheel))
-        hardware.controller.rightBumper(PushBallAndRetract(hardware.ballpusher))
+        hardware.controller.rightBumper().onTrue(PushBallAndRetract.red(hardware.ballpusher))
+        hardware.controller.leftBumper().onTrue(PushBallAndRetract.yellow(hardware.ballpusher))

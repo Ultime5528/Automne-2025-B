@@ -8,19 +8,17 @@ from ultime.subsystem import Subsystem
 
 class BallPusher(Subsystem):
 
-    motor_speed = autoproperty(0.2)
-
     def __init__(self):
 
         super().__init__()
 
         self._motor = VictorSP(ports.SIM.ballpusher_motor)
 
-    def push(self):
-        self._motor.set(self.motor_speed)
+    def push(self, speed : float):
+        self._motor.set(speed)
 
-    def retract(self):
-        self._motor.set(-self.motor_speed)
+    def retract(self, speed : float):
+        self._motor.set(-float(speed))
 
     def stop(self):
         self._motor.stopMotor()

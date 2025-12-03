@@ -4,8 +4,8 @@ from commands2 import CommandScheduler
 
 from commands.drive import Drive
 from commands.movegroove import MoveGroove
-from commands.pushballandretract import PushBallAndRetract
 from commands.pushball import PushBall
+from commands.pushballandretract import PushBallAndRetract
 from commands.retractballpusher import RetractBallPusher
 from commands.shoot import Shoot
 from modules.hardware import HardwareModule
@@ -39,9 +39,12 @@ class DashboardModule(Module):
         """
         BallPusher
         """
-        putCommandOnDashboard("BallPusher", RetractBallPusher(hardware.ballpusher))
-        putCommandOnDashboard("BallPusher", PushBall(hardware.ballpusher))
-        putCommandOnDashboard("BallPusher", PushBallAndRetract(hardware.ballpusher))
+        putCommandOnDashboard("BallPusher", PushBall.yellow(hardware.ballpusher))
+        putCommandOnDashboard("BallPusher", PushBall.red(hardware.ballpusher))
+        putCommandOnDashboard("BallPusher", RetractBallPusher.yellow(hardware.ballpusher))
+        putCommandOnDashboard("BallPusher", RetractBallPusher.red(hardware.ballpusher))
+        putCommandOnDashboard("BallPusher", PushBallAndRetract.yellow(hardware.ballpusher))
+        putCommandOnDashboard("BallPusher", PushBallAndRetract.red(hardware.ballpusher))
 
         """
         Drivetrain

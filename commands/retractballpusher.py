@@ -2,14 +2,35 @@ import wpilib
 from commands2 import Command
 
 from subsystems.ballpusher import BallPusher
-from ultime.autoproperty import autoproperty
+from ultime.autoproperty import autoproperty, FloatProperty, asCallable
 
 
 class RetractBallPusher(Command):
-    delay = autoproperty(1.5)
 
-    def __init__(self, ballpusher: BallPusher) -> None:
+    @classmethod
+    def red(cls, ballpusher: BallPusher):
+        cmd = cls(
+            ballpusher,
+            lambda: retract_ball_pusher_properties.delay_red,
+            lambda: retract_ball_pusher_properties.speed_red
+        )
+        cmd.setName(cmd.getName() + ".red")
+        return cmd
+
+    @classmethod
+    def yellow(cls, ballpusher: BallPusher):
+        cmd = cls(
+            ballpusher,
+            lambda: retract_ball_pusher_properties.delay_yellow,
+            lambda: retract_ball_pusher_properties.speed_yellow
+        )
+        cmd.setName(cmd.getName() + ".yellow")
+        return cmd
+
+    def __init__(self, ballpusher: BallPusher, delay : FloatProperty, speed : FloatProperty) -> None:
         super().__init__()
+        self.delay_getter = asCallable(delay)
+        self.speed_getter = asCallable(speed)
         self.ballpusher = ballpusher
         self.addRequirements(ballpusher)
         self.timer = wpilib.Timer()
@@ -19,12 +40,23 @@ class RetractBallPusher(Command):
         self.timer.start()
 
     def execute(self) -> None:
-        self.ballpusher.retract()
+        self.ballpusher.retract(self.speed_getter())
 
     def isFinished(self) -> bool:
-        return self.timer.hasElapsed(self.delay)
+        return self.timer.hasElapsed(self.delay_getter())
 
     def end(self, interrupted: bool):
         self.timer.stop()
         self.ballpusher.stop()
 
+class _ClassProperties:
+    #delay_red = autoproperty(0.475, subtable=RetractBallPusher.__name__)
+    #speed_red = autoproperty(0.2, subtable=RetractBallPusher.__name__)
+    #delay_yellow = autoproperty(0.6, subtable=RetractBallPusher.__name__)
+    #speed_yellow = autoproperty(0.2, subtable=RetractBallPusher.__name__)
+    delay_red = 0.475
+    speed_red = 0.2
+    delay_yellow = 0.6
+    speed_yellow = 0.2
+
+retract_ball_pusher_properties = _ClassProperties
