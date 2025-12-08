@@ -1,4 +1,4 @@
-from wpilib import VictorSP
+from rev import SparkMax
 from wpiutil import SendableBuilder
 
 import ports
@@ -8,13 +8,13 @@ from ultime.subsystem import Subsystem
 
 class Drivetrain(Subsystem):
 
-    motor_speed = autoproperty(0.2)
+    motor_speed = autoproperty(0.5)
 
     def __init__(self):
 
         super().__init__()
 
-        self._motor = VictorSP(ports.SIM.drivetrain_motor)
+        self._motor = SparkMax(ports.CAN.drivetrain_motor, SparkMax.MotorType.kBrushless)
 
     def goForward(self):
         self._motor.set(self.motor_speed)

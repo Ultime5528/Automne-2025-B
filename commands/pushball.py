@@ -43,8 +43,6 @@ class PushBall(Command):
         self.ballpusher.push(self.speed_getter())
 
     def isFinished(self) -> bool:
-        d = self.delay_getter()
-        s = self.speed_getter()
         return self.timer.hasElapsed(self.delay_getter())
 
     def end(self, interrupted: bool):
@@ -52,13 +50,9 @@ class PushBall(Command):
         self.ballpusher.stop()
 
 class _ClassProperties:
-    #delay_red = autoproperty(1.5, subtable=PushBall.__name__)
-    #speed_red = autoproperty(0.2, subtable=PushBall.__name__)
-    #delay_yellow = autoproperty(1.5, subtable=PushBall.__name__)
-    #speed_yellow = autoproperty(0.2, subtable=PushBall.__name__)
-    delay_red = 1.5
-    speed_red = 0.2
-    delay_yellow = 1.5
-    speed_yellow = 0.2
+    delay_red = autoproperty(3, subtable=PushBall.__name__)
+    speed_red = autoproperty(0.15, subtable=PushBall.__name__)
+    delay_yellow = autoproperty(3, subtable=PushBall.__name__)
+    speed_yellow = autoproperty(0.15, subtable=PushBall.__name__)
 
-push_ball_properties = _ClassProperties
+push_ball_properties = _ClassProperties()

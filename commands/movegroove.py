@@ -13,13 +13,16 @@ class MoveGroove(Command):
         self.addRequirements(pulley)
         self.xbox_remote = xbox_remote
 
+    def initialize(self):
+        self.pulley.maintain()
+
     def execute(self):
-        if self.xbox_remote.y():
+        if self.xbox_remote.povUp().getAsBoolean():
             self.pulley.pulleyUp()
-        elif self.xbox_remote.a():
+        elif self.xbox_remote.povDown().getAsBoolean():
             self.pulley.pulleyDown()
         else:
-            self.pulley.stop()
+            self.pulley.maintain()
 
     def isFinished(self) -> bool:
         return False

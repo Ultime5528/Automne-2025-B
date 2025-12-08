@@ -29,8 +29,9 @@ class DashboardModule(Module):
         Flywheel
         """
         
-        putCommandOnDashboard("Flywheel", Shoot(hardware.flywheel))
+        putCommandOnDashboard("Flywheel", Shoot.red(hardware.flywheel))
 
+        putCommandOnDashboard("Flywheel", Shoot.yellow(hardware.flywheel))
         """
         Pulley
         """

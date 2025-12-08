@@ -50,13 +50,9 @@ class RetractBallPusher(Command):
         self.ballpusher.stop()
 
 class _ClassProperties:
-    #delay_red = autoproperty(0.475, subtable=RetractBallPusher.__name__)
-    #speed_red = autoproperty(0.2, subtable=RetractBallPusher.__name__)
-    #delay_yellow = autoproperty(0.6, subtable=RetractBallPusher.__name__)
-    #speed_yellow = autoproperty(0.2, subtable=RetractBallPusher.__name__)
-    delay_red = 0.475
-    speed_red = 0.2
-    delay_yellow = 0.6
-    speed_yellow = 0.2
+    delay_red = autoproperty(1.15, subtable=RetractBallPusher.__name__)
+    speed_red = autoproperty(0.15, subtable=RetractBallPusher.__name__)
+    delay_yellow = autoproperty(1.3, subtable=RetractBallPusher.__name__)
+    speed_yellow = autoproperty(0.15, subtable=RetractBallPusher.__name__)
 
-retract_ball_pusher_properties = _ClassProperties
+retract_ball_pusher_properties = _ClassProperties()

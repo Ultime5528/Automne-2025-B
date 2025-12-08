@@ -13,7 +13,8 @@ Order port numbers, ex:
 
 
 class CAN(Immutable):
-    pass
+    drivetrain_motor = 1
+    pulley_motor = 2
 
 class PWM(Immutable):
     pass
@@ -26,6 +27,4 @@ class PDP(Immutable):
 
 class SIM(Immutable):
     flywheel_motor = 0
-    pulley_motor = 1
     ballpusher_motor = 2
-    drivetrain_motor = 3

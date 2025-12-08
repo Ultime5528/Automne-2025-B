@@ -13,7 +13,7 @@ robotpy_version = "2025.3.2.2"
 robotpy_extras = [
     # "all",
     # "apriltag",
-    "commands2",
+    # "commands2",
     # "cscore",
     # "navx",
     # "pathplannerlib",
@@ -28,4 +28,9 @@ robotpy_extras = [
 ]
 
 # Other pip packages to install
-requires = []
+requires = [
+    "robotpy-rev==2025.0.3.1",
+    "robotpy-commands-v2==2025.3.2",
+    "black==24.1.1; platform_machine != 'roborio'"
+    
+]

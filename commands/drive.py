@@ -15,9 +15,9 @@ class Drive(Command):
         self.xbox_remote = xbox_remote
 
     def execute(self) -> None:
-        if self.xbox_remote.povUp():
+        if self.xbox_remote.povLeft():
             self.drivetrain.goForward()
-        elif self.xbox_remote.povDown():
+        elif self.xbox_remote.povRight():
             self.drivetrain.goBackward()
         else:
             self.drivetrain.stop()
